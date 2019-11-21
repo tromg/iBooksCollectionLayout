@@ -25,7 +25,7 @@ public class BooksLayout: UICollectionViewFlowLayout {
         (unscaledItemWidth - scaledItemWidth * transformRatio) / 2 + BooksLayout.offscreenPreventionOffset
     }
     var unscaledItemWidth: CGFloat {
-        collectionView?.bounds.width ?? 0
+        (collectionView?.bounds.width ?? 100) - 2 * Self.offscreenPreventionOffset
     }
 
     var scaledItemWidth: CGFloat {
@@ -127,7 +127,7 @@ public class BooksLayout: UICollectionViewFlowLayout {
         }.max() ?? 0
 
 
-        return .init(width: width + Self.itemSideInset, height: height)
+        return .init(width: width + Self.itemSideInset + Self.offscreenPreventionOffset, height: height)
     }
 
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
