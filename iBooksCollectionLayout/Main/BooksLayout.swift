@@ -1,10 +1,10 @@
 import UIKit
 
-protocol BooksLayoutDelegate: class {
+public protocol BooksLayoutDelegate: class {
     func booksLayoutShouldDidHideCollectionView(_ booksLayout: BooksLayout)
 }
 
-class BooksLayout: UICollectionViewFlowLayout {
+public class BooksLayout: UICollectionViewFlowLayout {
 
     static let interItemOffset: CGFloat = 4
     static let itemSideInset: CGFloat = 16
@@ -13,7 +13,7 @@ class BooksLayout: UICollectionViewFlowLayout {
     static let shiftTransformOffsetY: CGFloat = 30
     static let closeLimitOffsetY: CGFloat = -64
 
-    static var offscreenPreventionOffset: CGFloat {
+    public static var offscreenPreventionOffset: CGFloat {
         ceil(shiftTransformOffsetX + 1 - itemSideInset + interItemOffset)
     }
 
@@ -48,13 +48,13 @@ class BooksLayout: UICollectionViewFlowLayout {
         }
     }
 
-    var interactiveCloseEnabled = false
+    public var interactiveCloseEnabled = false
 
     var isClosing = false
 
-    weak var delegate: BooksLayoutDelegate?
+    public weak var delegate: BooksLayoutDelegate?
 
-    override func prepare() {
+    override public func prepare() {
         guard let collectionView = collectionView else {
             return
         }
@@ -109,7 +109,7 @@ class BooksLayout: UICollectionViewFlowLayout {
         })
     }
 
-    override var collectionViewContentSize: CGSize {
+    override public var collectionViewContentSize: CGSize {
         let width = cache.map { attr -> CGFloat in
             let centerX = attr.center.x
             let width = attr.size.width
@@ -130,15 +130,15 @@ class BooksLayout: UICollectionViewFlowLayout {
         return .init(width: width + Self.itemSideInset, height: height)
     }
 
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return cache.filter { $0.frame.intersects(rect) }
     }
 
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return cache[indexPath.item]
     }
 
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    override public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
 
         guard let collectionView = collectionView else {
             return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
@@ -187,7 +187,7 @@ class BooksLayout: UICollectionViewFlowLayout {
 }
 
 extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
-    func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCell) -> Bool {
+    public func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCell) -> Bool {
         guard let collectionView = collectionView else {
             return false
         }
@@ -196,11 +196,11 @@ extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
         return bounds ~= booksLayoutScrollableCell.center.x
     }
 
-    func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, contentOffset: CGPoint) -> Bool {
+    public func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, contentOffset: CGPoint) -> Bool {
         return contentOffset.y > Self.identityTransformOffset
     }
 
-    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint) {
+    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint) {
         let proposedResult = targetContentOffset.pointee.y
         let identityTransformOffset = Self.identityTransformOffset
 
@@ -219,7 +219,7 @@ extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
         }
     }
 
-    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool) {
+    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool) {
         guard let collectionView = collectionView,
               let indexPath = collectionView.indexPath(for: booksLayoutScrollableCell),
               isClosing == false else {

@@ -1,24 +1,24 @@
 import UIKit
 
-protocol BooksLayoutScrollableCellScrollDelegate: class {
+public protocol BooksLayoutScrollableCellScrollDelegate: class {
     func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCell) -> Bool
     func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, contentOffset: CGPoint) -> Bool
     func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool)
     func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint)
 }
 
-protocol BooksLayoutScrollableCellViewController: UIViewController {
+public protocol BooksLayoutScrollableCellViewController: UIViewController {
     func height(for width: CGFloat) -> CGFloat
     var closeActionBlock: (() -> Void)? { get set }
 }
 
-class BooksLayoutScrollableCell: UICollectionViewCell {
+public class BooksLayoutScrollableCell: UICollectionViewCell {
 
-    static var reuseId: String {
+    public static var reuseId: String {
         String(describing: self)
     }
 
-    weak var scrollDelegate: BooksLayoutScrollableCellScrollDelegate?
+    public weak var scrollDelegate: BooksLayoutScrollableCellScrollDelegate?
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -53,7 +53,7 @@ class BooksLayoutScrollableCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         scrollView.frame = bounds
 
         if let contentContainerView = contentContainerView {
@@ -62,23 +62,23 @@ class BooksLayoutScrollableCell: UICollectionViewCell {
         }
     }
 
-    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+    override public func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)
     }
 
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let resultPoint = scrollView.convert(point, from: self)
 
         return scrollView.subviews.first { $0.frame.contains(resultPoint) } != nil
     }
 
-    func setContentContainerView(_ contentContainerView: BooksLayoutScrollableCellViewController) {
+    public func setContentContainerView(_ contentContainerView: BooksLayoutScrollableCellViewController) {
         self.contentContainerView = contentContainerView
 
         setNeedsLayout()
     }
 
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if self.point(inside: point, with: event)
             && !self.isHidden
             && self.isUserInteractionEnabled
@@ -93,12 +93,12 @@ class BooksLayoutScrollableCell: UICollectionViewCell {
 
 extension BooksLayoutScrollableCell: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollDelegate?.booksLayoutScrollableCell(self, didChangeContentOffset: scrollView.contentOffset, isDecelerating: scrollView.isDecelerating)
         scrollView.showsVerticalScrollIndicator = scrollDelegate?.booksLayoutScrollableCellCanShowScrollIndicator(self, contentOffset: scrollView.contentOffset) ?? false
     }
 
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         scrollDelegate?.booksLayoutScrollableCell(self, willChangeContentOffset: targetContentOffset, withVelocity: velocity)
     }
 }
