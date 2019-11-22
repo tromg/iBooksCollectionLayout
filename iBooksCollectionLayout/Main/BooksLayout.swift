@@ -12,13 +12,14 @@ public class BooksLayout: UICollectionViewFlowLayout {
     public var identityTransformOffset: CGFloat = 146
     public var shiftTransformOffsetY: CGFloat = 30
     public var closeLimitOffsetY: CGFloat = -64
+    public var itemHeight: CGFloat? = 560
 
     public var offscreenPreventionOffset: CGFloat {
         ceil(shiftTransformOffsetX + 1 - itemSideInset + interItemOffset)
     }
 
     private var defaultHeight: CGFloat {
-        return (collectionView?.bounds.height ?? 100) - 44
+        return itemHeight ?? (collectionView?.bounds.height ?? 100) - 44
     }
 
     private var sideInset: CGFloat {
