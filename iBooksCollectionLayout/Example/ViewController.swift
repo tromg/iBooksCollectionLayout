@@ -3,11 +3,16 @@ import iBooksLayout
 
 class ViewController: UIViewController {
 
+    lazy var layout: BooksLayout = {
+        let layout = BooksLayout()
+        layout.interactiveCloseEnabled = true
+        layout.delegate = self
+
+        return layout
+    }()
+
     lazy var collectionView: UICollectionView = {
-        let l = BooksLayout()
-        l.interactiveCloseEnabled = true
-        l.delegate = self
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: l)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.register(BooksLayoutScrollableCell.self, forCellWithReuseIdentifier: BooksLayoutScrollableCell.reuseId)
         collectionView.isDirectionalLockEnabled = true
@@ -39,7 +44,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        collectionView.frame = .init(x: -BooksLayout.offscreenPreventionOffset, y: 0, width: view.bounds.width + 2 * BooksLayout.offscreenPreventionOffset, height: view.bounds.height)
+        collectionView.frame = .init(x: -layout.offscreenPreventionOffset, y: 0, width: view.bounds.width + 2 * layout.offscreenPreventionOffset, height: view.bounds.height)
         collectionView.collectionViewLayout.invalidateLayout()
 
         if initialIndexDidSet == false {
