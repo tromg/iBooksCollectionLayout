@@ -53,11 +53,17 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
     }
 
     @objc private func handleTap(_ tapRec: UITapGestureRecognizer) {
-        if point(inside: tapRec.location(in: self), with: nil) {
-            scrollDelegate?.booksLayoutScrollableCellShouldBeExpanded(self)
-        } else {
+        guard point(inside: tapRec.location(in: self), with: nil) else {
             scrollDelegate?.booksLayoutScrollableCellShouldBeClosed(self)
+            return
         }
+
+        guard scrollView.contentOffset.y > 0 else {
+            scrollDelegate?.booksLayoutScrollableCellShouldBeExpanded(self)
+            return
+        }
+
+        // do nothing
     }
 
     override init(frame: CGRect) {
