@@ -187,7 +187,15 @@ public class BooksLayout: UICollectionViewFlowLayout {
 }
 
 extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
-    public func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCell) -> Bool {
+    public func booksLayoutScrollableCellShouldBeExpanded(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) {
+        booksLayoutScrollableCell.setScrollOffset(Self.identityTransformOffset, animated: true)
+    }
+
+    public func booksLayoutScrollableCellShouldBeClosed(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) {
+        delegate?.booksLayoutShouldDidHideCollectionView(self)
+    }
+
+    public func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) -> Bool {
         guard let collectionView = collectionView else {
             return false
         }
@@ -196,11 +204,11 @@ extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
         return bounds ~= booksLayoutScrollableCell.center.x
     }
 
-    public func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, contentOffset: CGPoint) -> Bool {
+    public func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, contentOffset: CGPoint) -> Bool {
         return contentOffset.y > Self.identityTransformOffset
     }
 
-    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint) {
+    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint) {
         let proposedResult = targetContentOffset.pointee.y
         let identityTransformOffset = Self.identityTransformOffset
 
@@ -219,7 +227,7 @@ extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
         }
     }
 
-    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool) {
+    public func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool) {
         guard let collectionView = collectionView,
               let indexPath = collectionView.indexPath(for: booksLayoutScrollableCell),
               isClosing == false else {

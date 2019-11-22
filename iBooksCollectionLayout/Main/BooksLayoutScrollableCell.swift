@@ -1,15 +1,22 @@
 import UIKit
 
 public protocol BooksLayoutScrollableCellScrollDelegate: class {
-    func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCell) -> Bool
-    func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, contentOffset: CGPoint) -> Bool
-    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool)
-    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCell, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint)
+    func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) -> Bool
+    func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, contentOffset: CGPoint) -> Bool
+    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool)
+    func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint)
+    func booksLayoutScrollableCellShouldBeExpanded(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol)
+    func booksLayoutScrollableCellShouldBeClosed(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol)
 }
 
 public protocol BooksLayoutScrollableCellViewController: UIViewController {
     func height(for width: CGFloat) -> CGFloat
     var closeActionBlock: (() -> Void)? { get set }
+}
+
+public protocol BooksLayoutScrollableCellProtocol: UICollectionViewCell {
+
+    func setScrollOffset(_ newOffset: CGFloat, animated: Bool)
 }
 
 public class BooksLayoutScrollableCell: UICollectionViewCell {
@@ -20,12 +27,18 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
 
     public weak var scrollDelegate: BooksLayoutScrollableCellScrollDelegate?
 
+    private lazy var tapRec: UITapGestureRecognizer = {
+        UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+    }()
+
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.delegate = self
         scrollView.clipsToBounds = false
         scrollView.alwaysBounceVertical = true
         scrollView.showsVerticalScrollIndicator = false
+
+        scrollView.addGestureRecognizer(tapRec)
 
         return scrollView
     }()
@@ -39,8 +52,12 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
         }
     }
 
-    func resetOffset(animated: Bool) {
-        scrollView.setContentOffset(.zero, animated: animated)
+    @objc private func handleTap(_ tapRec: UITapGestureRecognizer) {
+        if point(inside: tapRec.location(in: self), with: nil) {
+            scrollDelegate?.booksLayoutScrollableCellShouldBeExpanded(self)
+        } else {
+            scrollDelegate?.booksLayoutScrollableCellShouldBeClosed(self)
+        }
     }
 
     override init(frame: CGRect) {
@@ -51,6 +68,12 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public func setContentContainerView(_ contentContainerView: BooksLayoutScrollableCellViewController) {
+        self.contentContainerView = contentContainerView
+
+        setNeedsLayout()
     }
 
     override public func layoutSubviews() {
@@ -72,22 +95,21 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
         return scrollView.subviews.first { $0.frame.contains(resultPoint) } != nil
     }
 
-    public func setContentContainerView(_ contentContainerView: BooksLayoutScrollableCellViewController) {
-        self.contentContainerView = contentContainerView
-
-        setNeedsLayout()
-    }
-
     override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if self.point(inside: point, with: event)
-            && !self.isHidden
+        if !self.isHidden
             && self.isUserInteractionEnabled
-            && (scrollDelegate?.booksLayoutScrollableCellCanBeInteracted(self) ?? true)
-         {
+            && (scrollDelegate?.booksLayoutScrollableCellCanBeInteracted(self) ?? true) {
             return scrollView.subviews.compactMap { $0.hitTest($0.convert(point, from: self), with: event) }.first ?? scrollView
         } else {
             return nil
         }
+    }
+}
+
+extension BooksLayoutScrollableCell: BooksLayoutScrollableCellProtocol {
+
+    public func setScrollOffset(_ newOffset: CGFloat, animated: Bool) {
+        scrollView.setContentOffset(.init(x: 0, y: newOffset), animated: animated)
     }
 }
 
