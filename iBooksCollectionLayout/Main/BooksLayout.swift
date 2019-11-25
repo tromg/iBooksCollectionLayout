@@ -183,6 +183,7 @@ public class BooksLayout: UICollectionViewFlowLayout {
 }
 
 extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
+
     public func booksLayoutScrollableCellShouldBeExpanded(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) {
         booksLayoutScrollableCell.setScrollOffset(identityTransformOffset, animated: true)
     }
@@ -234,6 +235,10 @@ extension BooksLayout: BooksLayoutScrollableCellScrollDelegate {
         } else {
             indexWithProgress = .init(index: indexPath.item, offset: newContentOffset.y, isDecelerating: isDecelerating)
         }
+    }
+
+    public func booksLayoutScrollableCellMinimumContentHeight(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) -> CGFloat {
+        return defaultHeight + identityTransformOffset
     }
 }
 

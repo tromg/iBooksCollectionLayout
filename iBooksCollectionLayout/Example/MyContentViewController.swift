@@ -56,6 +56,7 @@ class MyContentViewController: UIViewController {
         super.viewDidLayoutSubviews()
 
         label.frame = view.bounds
+        label.sizeToFit()
         button.sizeToFit()
         button.center = .init(x: view.bounds.width / 2, y: 30)
     }

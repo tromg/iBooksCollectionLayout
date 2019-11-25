@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "iBooksLayout"
-  s.version               = "1.0.3"
+  s.version               = "1.0.4"
   s.summary               = "Layout inspired by iBooks App"
   s.homepage              = "https://github.com/tromg/iBooksCollectionLayout"
   s.license               = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE

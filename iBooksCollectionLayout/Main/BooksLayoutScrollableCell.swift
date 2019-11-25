@@ -5,6 +5,7 @@ public protocol BooksLayoutScrollableCellScrollDelegate: class {
     func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, contentOffset: CGPoint) -> Bool
     func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool)
     func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, willChangeContentOffset targetContentOffset: UnsafeMutablePointer<CGPoint>, withVelocity velocity: CGPoint)
+    func booksLayoutScrollableCellMinimumContentHeight(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) -> CGFloat
     func booksLayoutScrollableCellShouldBeExpanded(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol)
     func booksLayoutScrollableCellShouldBeClosed(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol)
 }
@@ -37,7 +38,9 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
         scrollView.clipsToBounds = false
         scrollView.alwaysBounceVertical = true
         scrollView.showsVerticalScrollIndicator = false
-
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+        }
         scrollView.addGestureRecognizer(tapRec)
 
         return scrollView
@@ -86,13 +89,11 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
         scrollView.frame = bounds
 
         if let contentContainerView = contentContainerView {
-            scrollView.contentSize = .init(width: bounds.width, height: contentContainerView.height(for: bounds.width))
-            contentContainerView.view.frame = .init(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
+            let minHeight = scrollDelegate?.booksLayoutScrollableCellMinimumContentHeight(self) ?? 0
+            let height = max(contentContainerView.height(for: bounds.width), minHeight)
+            contentContainerView.view.frame = .init(x: 0, y: 0, width: bounds.width, height: height)
+            scrollView.contentSize = contentContainerView.view.frame.size
         }
-    }
-
-    override public func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-        super.apply(layoutAttributes)
     }
 
     override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
