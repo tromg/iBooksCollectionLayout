@@ -29,7 +29,10 @@ public class BooksLayoutScrollableCell: UICollectionViewCell {
     public weak var scrollDelegate: BooksLayoutScrollableCellScrollDelegate?
 
     private lazy var tapRec: UITapGestureRecognizer = {
-        UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tapRec = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tapRec.cancelsTouchesInView = false
+
+        return tapRec
     }()
 
     private lazy var scrollView: UIScrollView = {
