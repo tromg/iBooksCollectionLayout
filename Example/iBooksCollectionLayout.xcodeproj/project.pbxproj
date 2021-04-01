@@ -7,27 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F4AF24C2383DFCB007809F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF24B2383DFCB007809F9 /* AppDelegate.swift */; };
-		6F4AF2502383DFCB007809F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF24F2383DFCB007809F9 /* ViewController.swift */; };
-		6F4AF2552383DFCD007809F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F4AF2542383DFCD007809F9 /* Assets.xcassets */; };
-		6F4AF2582383DFCD007809F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F4AF2562383DFCD007809F9 /* LaunchScreen.storyboard */; };
-		6F4AF26223855183007809F9 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF26123855183007809F9 /* Helpers.swift */; };
-		6F4AF2662385520E007809F9 /* MyContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF2652385520E007809F9 /* MyContentViewController.swift */; };
-		6F4AF26C238586DD007809F9 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF26B238586DD007809F9 /* InitialVC.swift */; };
-		6F4AF2742386AEB8007809F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4AF2732386AEB8007809F9 /* Default-568h@2x.png */; };
-		6F4AF27E2386B058007809F9 /* iBooksLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4AF27C2386B058007809F9 /* iBooksLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F4AF2812386B058007809F9 /* iBooksLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4AF27A2386B058007809F9 /* iBooksLayout.framework */; };
-		6F4AF2822386B058007809F9 /* iBooksLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4AF27A2386B058007809F9 /* iBooksLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6F4AF2872386B05C007809F9 /* BooksLayoutScrollableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF263238551B8007809F9 /* BooksLayoutScrollableCell.swift */; };
-		6F4AF2882386B05E007809F9 /* BooksLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4AF25F23855153007809F9 /* BooksLayout.swift */; };
+		8C9E5BAD2615D3BF001AB5B5 /* iBooksLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9E5BA62615D3BF001AB5B5 /* iBooksLayout.framework */; };
+		8C9E5BAE2615D3BF001AB5B5 /* iBooksLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9E5BA62615D3BF001AB5B5 /* iBooksLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C9E5BBA2615D43C001AB5B5 /* BooksLayoutScrollableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BB82615D43C001AB5B5 /* BooksLayoutScrollableCell.swift */; };
+		8C9E5BBB2615D43C001AB5B5 /* BooksLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BB92615D43C001AB5B5 /* BooksLayout.swift */; };
+		8C9E5BC32615D494001AB5B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BBE2615D494001AB5B5 /* ViewController.swift */; };
+		8C9E5BC42615D494001AB5B5 /* MyContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BBF2615D494001AB5B5 /* MyContentViewController.swift */; };
+		8C9E5BC52615D494001AB5B5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BC02615D494001AB5B5 /* Helpers.swift */; };
+		8C9E5BC62615D494001AB5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BC12615D494001AB5B5 /* AppDelegate.swift */; };
+		8C9E5BC72615D494001AB5B5 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E5BC22615D494001AB5B5 /* InitialVC.swift */; };
+		8C9E5BCE2615D49F001AB5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9E5BCA2615D49F001AB5B5 /* Assets.xcassets */; };
+		8C9E5BCF2615D49F001AB5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9E5BCB2615D49F001AB5B5 /* LaunchScreen.storyboard */; };
+		8C9E5BD02615D49F001AB5B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9E5BCD2615D49F001AB5B5 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6F4AF27F2386B058007809F9 /* PBXContainerItemProxy */ = {
+		8C9E5BAB2615D3BF001AB5B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6F4AF2402383DFCB007809F9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6F4AF2792386B058007809F9;
+			remoteGlobalIDString = 8C9E5BA52615D3BF001AB5B5;
 			remoteInfo = iBooksLayout;
 		};
 /* End PBXContainerItemProxy section */
@@ -39,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6F4AF2822386B058007809F9 /* iBooksLayout.framework in Embed Frameworks */,
+				8C9E5BAE2615D3BF001AB5B5 /* iBooksLayout.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,20 +47,20 @@
 
 /* Begin PBXFileReference section */
 		6F4AF2482383DFCB007809F9 /* iBooksCollectionLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooksCollectionLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F4AF24B2383DFCB007809F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F4AF24F2383DFCB007809F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6F4AF2542383DFCD007809F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6F4AF2572383DFCD007809F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6F4AF2592383DFCD007809F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6F4AF25F23855153007809F9 /* BooksLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksLayout.swift; sourceTree = "<group>"; };
-		6F4AF26123855183007809F9 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		6F4AF263238551B8007809F9 /* BooksLayoutScrollableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksLayoutScrollableCell.swift; sourceTree = "<group>"; };
-		6F4AF2652385520E007809F9 /* MyContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentViewController.swift; sourceTree = "<group>"; };
-		6F4AF26B238586DD007809F9 /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
-		6F4AF2732386AEB8007809F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6F4AF27A2386B058007809F9 /* iBooksLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iBooksLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F4AF27C2386B058007809F9 /* iBooksLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBooksLayout.h; sourceTree = "<group>"; };
-		6F4AF27D2386B058007809F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C6047A02615DB6C003CC61B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C9E5BA62615D3BF001AB5B5 /* iBooksLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iBooksLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9E5BB42615D40A001AB5B5 /* iBooksLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBooksLayout.h; sourceTree = "<group>"; };
+		8C9E5BB52615D40A001AB5B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C9E5BB82615D43C001AB5B5 /* BooksLayoutScrollableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooksLayoutScrollableCell.swift; path = ../../../Sources/iBooksLayout/BooksLayoutScrollableCell.swift; sourceTree = "<group>"; };
+		8C9E5BB92615D43C001AB5B5 /* BooksLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BooksLayout.swift; path = ../../../Sources/iBooksLayout/BooksLayout.swift; sourceTree = "<group>"; };
+		8C9E5BBE2615D494001AB5B5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C9E5BBF2615D494001AB5B5 /* MyContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyContentViewController.swift; sourceTree = "<group>"; };
+		8C9E5BC02615D494001AB5B5 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8C9E5BC12615D494001AB5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C9E5BC22615D494001AB5B5 /* InitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		8C9E5BCA2615D49F001AB5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C9E5BCC2615D49F001AB5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C9E5BCD2615D49F001AB5B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4AF2812386B058007809F9 /* iBooksLayout.framework in Frameworks */,
+				8C9E5BAD2615D3BF001AB5B5 /* iBooksLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F4AF2772386B058007809F9 /* Frameworks */ = {
+		8C9E5BA32615D3BF001AB5B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,11 +85,9 @@
 		6F4AF23F2383DFCB007809F9 = {
 			isa = PBXGroup;
 			children = (
-				6F4AF2732386AEB8007809F9 /* Default-568h@2x.png */,
-				6F4AF24A2383DFCB007809F9 /* iBooksCollectionLayout */,
-				6F4AF2542383DFCD007809F9 /* Assets.xcassets */,
-				6F4AF2592383DFCD007809F9 /* Info.plist */,
-				6F4AF27B2386B058007809F9 /* iBooksLayout */,
+				8C9E5BC92615D49F001AB5B5 /* Resources */,
+				8C9E5BBD2615D494001AB5B5 /* App */,
+				8C9E5BB32615D40A001AB5B5 /* iBooksLayout */,
 				6F4AF2492383DFCB007809F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,59 +96,54 @@
 			isa = PBXGroup;
 			children = (
 				6F4AF2482383DFCB007809F9 /* iBooksCollectionLayout.app */,
-				6F4AF27A2386B058007809F9 /* iBooksLayout.framework */,
+				8C9E5BA62615D3BF001AB5B5 /* iBooksLayout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6F4AF24A2383DFCB007809F9 /* iBooksCollectionLayout */ = {
+		8C9E5BB32615D40A001AB5B5 /* iBooksLayout */ = {
 			isa = PBXGroup;
 			children = (
-				6F4AF26F2386AD50007809F9 /* Example */,
-				6F4AF26E2386AD4B007809F9 /* Main */,
+				8C9E5BB92615D43C001AB5B5 /* BooksLayout.swift */,
+				8C9E5BB82615D43C001AB5B5 /* BooksLayoutScrollableCell.swift */,
+				8C9E5BB42615D40A001AB5B5 /* iBooksLayout.h */,
+				8C9E5BB52615D40A001AB5B5 /* Info.plist */,
 			);
-			path = iBooksCollectionLayout;
+			name = iBooksLayout;
+			path = Sources/iBooksLayout;
 			sourceTree = "<group>";
 		};
-		6F4AF26E2386AD4B007809F9 /* Main */ = {
+		8C9E5BBD2615D494001AB5B5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6F4AF263238551B8007809F9 /* BooksLayoutScrollableCell.swift */,
-				6F4AF25F23855153007809F9 /* BooksLayout.swift */,
+				8C6047A02615DB6C003CC61B /* Info.plist */,
+				8C9E5BBE2615D494001AB5B5 /* ViewController.swift */,
+				8C9E5BBF2615D494001AB5B5 /* MyContentViewController.swift */,
+				8C9E5BC02615D494001AB5B5 /* Helpers.swift */,
+				8C9E5BC12615D494001AB5B5 /* AppDelegate.swift */,
+				8C9E5BC22615D494001AB5B5 /* InitialVC.swift */,
 			);
-			path = Main;
+			name = App;
+			path = Sources/App;
 			sourceTree = "<group>";
 		};
-		6F4AF26F2386AD50007809F9 /* Example */ = {
+		8C9E5BC92615D49F001AB5B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6F4AF2562383DFCD007809F9 /* LaunchScreen.storyboard */,
-				6F4AF24B2383DFCB007809F9 /* AppDelegate.swift */,
-				6F4AF24F2383DFCB007809F9 /* ViewController.swift */,
-				6F4AF26B238586DD007809F9 /* InitialVC.swift */,
-				6F4AF26123855183007809F9 /* Helpers.swift */,
-				6F4AF2652385520E007809F9 /* MyContentViewController.swift */,
+				8C9E5BCA2615D49F001AB5B5 /* Assets.xcassets */,
+				8C9E5BCB2615D49F001AB5B5 /* LaunchScreen.storyboard */,
+				8C9E5BCD2615D49F001AB5B5 /* Default-568h@2x.png */,
 			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		6F4AF27B2386B058007809F9 /* iBooksLayout */ = {
-			isa = PBXGroup;
-			children = (
-				6F4AF27C2386B058007809F9 /* iBooksLayout.h */,
-				6F4AF27D2386B058007809F9 /* Info.plist */,
-			);
-			path = iBooksLayout;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6F4AF2752386B058007809F9 /* Headers */ = {
+		8C9E5BA12615D3BF001AB5B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4AF27E2386B058007809F9 /* iBooksLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,21 +162,21 @@
 			buildRules = (
 			);
 			dependencies = (
-				6F4AF2802386B058007809F9 /* PBXTargetDependency */,
+				8C9E5BAC2615D3BF001AB5B5 /* PBXTargetDependency */,
 			);
 			name = iBooksCollectionLayout;
 			productName = iBooksCollectionLayout;
 			productReference = 6F4AF2482383DFCB007809F9 /* iBooksCollectionLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6F4AF2792386B058007809F9 /* iBooksLayout */ = {
+		8C9E5BA52615D3BF001AB5B5 /* iBooksLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F4AF2832386B058007809F9 /* Build configuration list for PBXNativeTarget "iBooksLayout" */;
+			buildConfigurationList = 8C9E5BB12615D3BF001AB5B5 /* Build configuration list for PBXNativeTarget "iBooksLayout" */;
 			buildPhases = (
-				6F4AF2752386B058007809F9 /* Headers */,
-				6F4AF2762386B058007809F9 /* Sources */,
-				6F4AF2772386B058007809F9 /* Frameworks */,
-				6F4AF2782386B058007809F9 /* Resources */,
+				8C9E5BA12615D3BF001AB5B5 /* Headers */,
+				8C9E5BA22615D3BF001AB5B5 /* Sources */,
+				8C9E5BA32615D3BF001AB5B5 /* Frameworks */,
+				8C9E5BA42615D3BF001AB5B5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -192,7 +184,7 @@
 			);
 			name = iBooksLayout;
 			productName = iBooksLayout;
-			productReference = 6F4AF27A2386B058007809F9 /* iBooksLayout.framework */;
+			productReference = 8C9E5BA62615D3BF001AB5B5 /* iBooksLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -208,8 +200,9 @@
 					6F4AF2472383DFCB007809F9 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
-					6F4AF2792386B058007809F9 = {
-						CreatedOnToolsVersion = 11.2.1;
+					8C9E5BA52615D3BF001AB5B5 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -227,7 +220,7 @@
 			projectRoot = "";
 			targets = (
 				6F4AF2472383DFCB007809F9 /* iBooksCollectionLayout */,
-				6F4AF2792386B058007809F9 /* iBooksLayout */,
+				8C9E5BA52615D3BF001AB5B5 /* iBooksLayout */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +230,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4AF2582383DFCD007809F9 /* LaunchScreen.storyboard in Resources */,
-				6F4AF2552383DFCD007809F9 /* Assets.xcassets in Resources */,
-				6F4AF2742386AEB8007809F9 /* Default-568h@2x.png in Resources */,
+				8C9E5BCF2615D49F001AB5B5 /* LaunchScreen.storyboard in Resources */,
+				8C9E5BD02615D49F001AB5B5 /* Default-568h@2x.png in Resources */,
+				8C9E5BCE2615D49F001AB5B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F4AF2782386B058007809F9 /* Resources */ = {
+		8C9E5BA42615D3BF001AB5B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,38 +250,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4AF2662385520E007809F9 /* MyContentViewController.swift in Sources */,
-				6F4AF2502383DFCB007809F9 /* ViewController.swift in Sources */,
-				6F4AF26C238586DD007809F9 /* InitialVC.swift in Sources */,
-				6F4AF24C2383DFCB007809F9 /* AppDelegate.swift in Sources */,
-				6F4AF26223855183007809F9 /* Helpers.swift in Sources */,
+				8C9E5BC72615D494001AB5B5 /* InitialVC.swift in Sources */,
+				8C9E5BC62615D494001AB5B5 /* AppDelegate.swift in Sources */,
+				8C9E5BC42615D494001AB5B5 /* MyContentViewController.swift in Sources */,
+				8C9E5BC52615D494001AB5B5 /* Helpers.swift in Sources */,
+				8C9E5BC32615D494001AB5B5 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F4AF2762386B058007809F9 /* Sources */ = {
+		8C9E5BA22615D3BF001AB5B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F4AF2882386B05E007809F9 /* BooksLayout.swift in Sources */,
-				6F4AF2872386B05C007809F9 /* BooksLayoutScrollableCell.swift in Sources */,
+				8C9E5BBB2615D43C001AB5B5 /* BooksLayout.swift in Sources */,
+				8C9E5BBA2615D43C001AB5B5 /* BooksLayoutScrollableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F4AF2802386B058007809F9 /* PBXTargetDependency */ = {
+		8C9E5BAC2615D3BF001AB5B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6F4AF2792386B058007809F9 /* iBooksLayout */;
-			targetProxy = 6F4AF27F2386B058007809F9 /* PBXContainerItemProxy */;
+			target = 8C9E5BA52615D3BF001AB5B5 /* iBooksLayout */;
+			targetProxy = 8C9E5BAB2615D3BF001AB5B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6F4AF2562383DFCD007809F9 /* LaunchScreen.storyboard */ = {
+		8C9E5BCB2615D49F001AB5B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6F4AF2572383DFCD007809F9 /* Base */,
+				8C9E5BCC2615D49F001AB5B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -346,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -400,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -417,8 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5XRLT3ZW8;
-				INFOPLIST_FILE = iBooksCollectionLayout/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = Sources/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,8 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5XRLT3ZW8;
-				INFOPLIST_FILE = iBooksCollectionLayout/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = Sources/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,9 +441,11 @@
 			};
 			name = Release;
 		};
-		6F4AF2842386B058007809F9 /* Debug */ = {
+		8C9E5BAF2615D3BF001AB5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -460,17 +453,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = iBooksLayout/Info.plist;
+				INFOPLIST_FILE = Sources/iBooksLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tromg.iBooksLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = tromg.iBooksCollectionLayout.iBooksLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -478,9 +471,11 @@
 			};
 			name = Debug;
 		};
-		6F4AF2852386B058007809F9 /* Release */ = {
+		8C9E5BB02615D3BF001AB5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -488,15 +483,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = iBooksLayout/Info.plist;
+				INFOPLIST_FILE = Sources/iBooksLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tromg.iBooksLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = tromg.iBooksCollectionLayout.iBooksLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -527,11 +521,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F4AF2832386B058007809F9 /* Build configuration list for PBXNativeTarget "iBooksLayout" */ = {
+		8C9E5BB12615D3BF001AB5B5 /* Build configuration list for PBXNativeTarget "iBooksLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F4AF2842386B058007809F9 /* Debug */,
-				6F4AF2852386B058007809F9 /* Release */,
+				8C9E5BAF2615D3BF001AB5B5 /* Debug */,
+				8C9E5BB02615D3BF001AB5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

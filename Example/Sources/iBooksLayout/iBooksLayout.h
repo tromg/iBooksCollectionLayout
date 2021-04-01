@@ -2,8 +2,8 @@
 //  iBooksLayout.h
 //  iBooksLayout
 //
-//  Created by Evgeny Petrov on 21.11.2019.
-//  Copyright © 2019 tromg. All rights reserved.
+//  Created by Oleg Montak on 01.04.2021.
+//  Copyright © 2021 tromg. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
