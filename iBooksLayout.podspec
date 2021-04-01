@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "iBooksLayout"
-  s.version               = "1.0.5"
+  s.version               = "1.0.6"
   s.summary               = "Layout inspired by iBooks App"
   s.homepage              = "https://github.com/tromg/iBooksCollectionLayout"
   s.license               = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.author                = { "tromg" => "tromg1@gmail.com" }
   s.ios.deployment_target = '11.0'
   s.source                = { :git => "https://github.com/tromg/iBooksCollectionLayout.git", :tag => s.version.to_s }
-  s.source_files          = 'iBooksCollectionLayout/Main/*.{swift}'
+  s.source_files          = 'Sources/iBooksLayout/*.{swift}'
   s.framework             = 'UIKit'
   s.requires_arc          = true
   s.swift_versions	  = "5.1"
