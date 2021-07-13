@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol BooksLayoutDelegate: class {
+public protocol BooksLayoutDelegate: AnyObject {
     func booksLayoutShouldDidHideCollectionView(_ booksLayout: BooksLayout)
 }
 
