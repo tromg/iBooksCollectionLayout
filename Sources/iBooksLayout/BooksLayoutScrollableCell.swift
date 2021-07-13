@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol BooksLayoutScrollableCellScrollDelegate: class {
+public protocol BooksLayoutScrollableCellScrollDelegate: AnyObject {
     func booksLayoutScrollableCellCanBeInteracted(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol) -> Bool
     func booksLayoutScrollableCellCanShowScrollIndicator(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, contentOffset: CGPoint) -> Bool
     func booksLayoutScrollableCell(_ booksLayoutScrollableCell: BooksLayoutScrollableCellProtocol, didChangeContentOffset newContentOffset: CGPoint, isDecelerating: Bool)
